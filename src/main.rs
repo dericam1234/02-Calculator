@@ -4,7 +4,7 @@ fn main() {
     main_loop();
 }
 
-fn main_loop () {
+fn main_loop() {
     loop {
         menu();
 
@@ -57,7 +57,9 @@ fn menu() {
 fn read_input() -> i32 {
     loop {
         let mut buffer = String::new();
-        io::stdin().read_line(&mut buffer).expect("Failed to read input");
+        io::stdin()
+            .read_line(&mut buffer)
+            .expect("Failed to read input");
 
         // Yritetään muuttaa syöte luvuksi. Jos se onnistuu, palautetaan luku (Ok).
         // Jos tulee virhe (esim. kirjaimia), pyydetään uusi syöte (Err) kaatumisen sijaan.
@@ -98,11 +100,9 @@ fn control_flow(option: i32, input1: i32, input2: i32) {
         add(input1, input2);
     } else if option == 2 {
         subtract(input1, input2);
-    }
-    else if option == 3 {
+    } else if option == 3 {
         multiply(input1, input2);
-    }
-    else {
+    } else {
         divide(input1, input2);
     };
 }
