@@ -88,7 +88,7 @@ fn multiply(input1: i32, input2: i32) {
 }
 
 fn divide(input1: i32, input2: i32) {
-    let result = input1 / input2;
+    let result = input1 as f32 / input2 as f32;
     println!("\nResult: {result}\n");
 }
 
